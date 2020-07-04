@@ -25,16 +25,20 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 @Component
 public class HelloWebSocketHandler extends TextWebSocketHandler {
 
+    ///////////////////////////////////////////////////////////////////////////
+    // public methods
+
    @Override
-   protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+   public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+      // get a message from the client.
+       String text = message.getPayload();
 
-      String clientMessage = message.getPayload();
-
-      if (clientMessage.startsWith("Hello") || clientMessage.startsWith("Hi")) {
+      // send a message to the client.
+      if (text.startsWith("Hello") || text.startsWith("Hi")) {
          session.sendMessage(new TextMessage("Hello! What can i do for you?"));
       } else {
-         session.sendMessage(
-               new TextMessage("This is a simple hello world example of using Spring WebSocket."));
+         session.sendMessage(new TextMessage("It's a simple example of Spring WebSocket."));
       }
    }
+   
 }

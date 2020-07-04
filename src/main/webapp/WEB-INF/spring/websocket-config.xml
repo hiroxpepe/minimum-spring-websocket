@@ -13,7 +13,7 @@
     <context:component-scan base-package="org.examproject"/>
 
     <websocket:handlers>
-        <websocket:mapping path="/hello" handler="helloHandler" />
+        <websocket:mapping path="/endpoint" handler="helloHandler" />
     </websocket:handlers>
 
     <bean id="helloHandler" class="org.examproject.websocket.HelloWebSocketHandler" />

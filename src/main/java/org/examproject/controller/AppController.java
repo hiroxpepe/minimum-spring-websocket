@@ -16,7 +16,7 @@ package org.examproject.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author h.adachi
@@ -24,9 +24,15 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @Controller
 public class AppController {
 
-   @RequestMapping(value="/", method=GET)
-   public String index() {
-      return "index";
-   }
+    ///////////////////////////////////////////////////////////////////////////
+    // public methods
+
+    @RequestMapping(
+        value={"/", "/index.html"},
+        method=RequestMethod.GET
+    )
+    public String index() {
+        return "index";
+    }
 
 }
