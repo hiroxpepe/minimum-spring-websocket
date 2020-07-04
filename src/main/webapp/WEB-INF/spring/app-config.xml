@@ -10,6 +10,6 @@
 
     <context:component-scan base-package="org.examproject"/>
 
-    <!--<import resource="websocket-config.xml" />-->
+    <import resource="websocket-config.xml" />
 
 </beans>
